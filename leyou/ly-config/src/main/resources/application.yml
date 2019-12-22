@@ -1,0 +1,20 @@
+server:
+  port: 12000
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/hifuture/shunyi109.git  #存放配置文件的git地址
+  rabbitmq:
+    virtual-host: /leyou
+    host: 127.0.0.1
+    username: leyou
+    password: leyou
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh  #暴露的消息总线地址
